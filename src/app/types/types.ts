@@ -1,0 +1,24 @@
+export type UserFormData = {
+    cuit: string;
+    firstName: string;
+    secondName?: string;
+    lastName: string;
+    gender?: string;
+    nationality?: string;
+    birthDate: string;
+    email: string;
+    phone: string;
+    country: string;
+    province: string;
+    city: string;
+    street: string;
+    number: string;
+    floor?: string;
+    flat?: string;
+    postalCode: string;
+    activity: string;
+    obligatedSubject: boolean;
+    usaResident: boolean;
+};
+export type MediaKeys = 'selfie' | 'frontDNI' | 'backDNI';
+export type MediaToValidate = Record<MediaKeys, string>;

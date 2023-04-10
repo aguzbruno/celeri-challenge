@@ -1,0 +1,97 @@
+.validation-card-container {
+    border: 1px solid #A7AEB8;
+    border-radius: 6px;
+}
+
+.Aprobado {
+    border-left: 12px solid #C3E6CD;
+}
+
+.Pendiente {
+    border-left: 12px solid #F5D9A8;
+}
+
+.validation-card__status {
+    display: flex;
+    align-items: center;
+    width: 122px;
+    height: 32px;
+    border-radius: 40px;
+}
+
+.success {
+    background-color: #C3E6CD;
+}
+
+.pending {
+    background-color: #F5D9A8;
+}
+
+.validation-card__action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 122px;
+    height: 45px;
+    border-radius: 40px;
+    cursor: pointer;
+    gap: 0.5rem;
+   
+}
+.to_validate{
+    background-color: #131313;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.disabled {
+    background-color: #D1D5DB;
+    color: #8692A6;
+    cursor: not-allowed;
+}
+.layout-back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 10%);
+    z-index: 1;
+}
+.layout-dni {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 150px;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    border: 3px solid white;
+    z-index: 1;
+}
+.layout-dni-parragraph{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    transform: translate(-50%, 0%);
+    background-color: #131313;
+    color: #fff;
+}
+
+.btn-capture {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.5rem;
+    z-index: 1;
+}
+.double-button{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+
+}
