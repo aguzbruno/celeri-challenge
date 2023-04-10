@@ -22,13 +22,13 @@ export function RadioButton({
                 <label className={`${inter.className} text-xs font-semibold `}>
                     {label}
                 </label>     
-                <div className="flex flex-row gap-2">
+                <div className="flex flex-row gap-4">
                                     <label>
-                                        <input type="radio" value="Si" name={name}  checked={selectedValue === true} onChange={onChange} />
+                                        <input type="radio" value="Si" className="mr-2" name={name}  checked={selectedValue === true} onChange={onChange} />
                                         Si
                                     </label>
                                     <label>
-                                        <input type="radio" value="No" name={name}  checked={selectedValue === false} onChange={onChange} />
+                                        <input type="radio" value="No"  className="mr-2" name={name}  checked={selectedValue === false} onChange={onChange} />
                                         No
                                     </label>
                 </div>       
