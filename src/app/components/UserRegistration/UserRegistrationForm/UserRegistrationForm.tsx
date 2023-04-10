@@ -126,7 +126,7 @@ export function UserRegistrationForm() {
                 >
                     Datos de contacto
                 </p>
-                <div className="flex flex-col sm:flex-row items-center ">
+                <div className="flex flex-col sm:flex-row items-center p-2 ">
                     <Input
                         typeOfInput="email"
                         required={true}
