@@ -44,7 +44,7 @@ export function UserMail() {
     };
 
     return (
-        <div className="flex flex-col w-12/12 m-auto">
+        <div className="flex flex-col w-12/12 m-auto gap-5">
             <p className={`${inter.className} sm:text-3xl font-bold`}>
                 Creá tu cuenta en celeri
             </p>
