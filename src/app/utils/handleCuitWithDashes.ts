@@ -12,7 +12,6 @@ export function handleCuitWithDashes(e: React.ChangeEvent<HTMLInputElement>){
         formattedValue += `-${inputValue.slice(9, 11)}`; // el segundo guión y los últimos 2 dígitos
     }
     if (inputValue.length >= 11) {
-        console.log(inputValue.length)
         const lastDigit = formattedValue.slice(11, 12);
         formattedValue = formattedValue.slice(0, 10) + lastDigit; // saco el guion de donde estaba
         formattedValue += `-${inputValue.slice(10, 11)}`; //Agrego el guion en la posicion correcta

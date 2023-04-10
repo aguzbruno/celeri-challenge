@@ -4,7 +4,6 @@ const apiKey = process.env.NEXT_PUBLIC_API_KEY
 export async function getPersonData(cuit: string) {
     try {
         const cuitWithoutDashes = cuit.replace(/-/g, '');
-        console.log(apiKey)
         const res = await fetch(
             `https://api-gateway.staging.scala.ly/afip/ws_sr_padron_a13/getPersona?idPersona=${cuitWithoutDashes}`,
             {
