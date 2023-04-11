@@ -6,7 +6,8 @@ import { getCUITFromDNI } from "../../../services/apiClient";
 import { Inter } from "next/font/google";
 import { Button } from "../../Form-Elements/Button";
 import { FormEvent } from 'react';
-import { DoubleButtonStepper } from "../../Form-Elements/DoubleButtonStepper";
+import CopyToClipboard from '../../../assets/copy-icon.svg'
+import Image from "next/image";
 
 const inter = Inter({ subsets: ['latin'] });
 interface UserDNIProps {
@@ -17,6 +18,7 @@ export function UserDNI( { handleBack }: UserDNIProps) {
     const [dniValue, setDniValue] = useState("");
     const [cuitToShow, setCuitToShow] = useState("");
     const [isLoading,setIsLoading] = useState(false);
+    const [copyToClip,setCopyToClip] = useState(false);
 
     const handleSubmitUserDNI = async (e: FormEvent) => {
         e.preventDefault();
@@ -52,12 +54,23 @@ export function UserDNI( { handleBack }: UserDNIProps) {
             setDniValue(e.target.value)
         }       
     }
+    const handleCopyToClip = () => {
+        navigator.clipboard.writeText(cuitToShow);
+        setCopyToClip(true);
+        setTimeout(() => {
+            setCopyToClip(false);
+        }, 2000);
+    }
     return !isLoading ? (
         cuitToShow ? (
         <div className='flex flex-col items-center gap-5'>
             <p className={`${inter.className} sm:text-3xl font-bold p-2`}>
                 Tu cuit es :</p>
-            <p className={`${inter.className} sm:text-xl p-2`}>{cuitToShow}</p>
+            <div className="flex flex-row relative m-2">
+                <p className={`${inter.className} sm:text-xl p-2`}>{cuitToShow}</p>
+                <button onClick={handleCopyToClip} title="Copiar"> <Image src={CopyToClipboard} alt='copy-button' width={20} /></button>
+                {copyToClip && <p className={`${inter.className} sm:text-lg p-2 font-bold text-indigo-500 absolute bottom-9 left-8 `}>Copiado!</p>}
+            </div>
             <Button
                         type="button"
                         cssButton="secondary"
