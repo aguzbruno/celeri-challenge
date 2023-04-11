@@ -10,8 +10,7 @@ const inter = Inter({ subsets: ['latin'] });
 export function UserRetakeRegistration() {
     const { goTo, setUserData, setHasRetakeOption } = useStepper()
 
-     const retakeRegistration = (e: FormEvent) => {
-        e.preventDefault();
+     const retakeRegistration = ( ) => {
         // Traigo los datos del usuario y del numero de step del local storage
         const userDataFromLocalStorage = getLocalStorageItem('userData');
         const retakeLocalStorage = getLocalStorageItem('retakeToStep');
@@ -21,8 +20,7 @@ export function UserRetakeRegistration() {
         setHasRetakeOption(false);
     };
 
-    const startNewRegistration = (e: FormEvent) => {
-        e.preventDefault();
+    const startNewRegistration = () => {       
         localStorage.clear();
         goTo(0);
         setHasRetakeOption(false);
